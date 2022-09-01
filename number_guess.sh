@@ -11,12 +11,11 @@ GUESS_NUMBER() {
   fi
 
   read GUESS
+  GUESS_COUNT=$(($GUESS_COUNT + 1))
   if [[ ! $GUESS =~ ^[0-9]*$ ]]
   then
     GUESS_NUMBER "That is not an integer, guess again:"
   else
-    GUESS_COUNT=$(($GUESS_COUNT + 1))
-    #check number
     if (( $GUESS > $NUMBER ))
     then
       GUESS_NUMBER "It's lower than that, guess again:"
